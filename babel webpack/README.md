@@ -31,11 +31,6 @@ $ npm run build
 
 ## More Info
 
-### Author
-
-Brad Traversy
-[Traversy Media](http://www.traversymedia.com)
-
 ### License
 
 This project is licensed under the MIT License
