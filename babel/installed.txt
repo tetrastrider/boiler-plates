@@ -1,0 +1,48 @@
+npm i --save-dev @babel/core @babel/cli @babel/node nodemon
+
+"dev":"nodemon --exec babel-node src/index.js"
+
+npm i --save-dev @babel/preset-env
+
+npm install --save @babel/polyfill
+
+npm install babel-preset-minify --save-dev
+
+npm i rimraf
+
+yarn add @babel/preset-flow
+
+
+
+  "scripts": {
+    "dev": "nodemon --exec babel-node src/index.js",
+    "build": "babel src/ --out-dir dist",
+    "serve": "node dist/index.js",
+    "mini": "babel dist/index.js --presets minify",
+    "auto": "npx babel src --watch --out-dir dist",
+    "one": "npx babel src --out-file index.js",
+    "postbuild": "cd functions && npm i -s",
+    "deploy": "npm run build && firebase deploy",
+    "prebuild": "node node_modules/rimraf/bin functions",
+    "func": "babel src/ --out-dir functions --copy-files --ignore src/node_modules"
+  }
+
+
+
+  {
+    "presets": [
+      "@babel/preset-env",
+      "minify",
+      [
+        "env",
+        {
+          "targets": {
+            "node": "6.14.0"
+          }
+        }
+      ]//,
+     // [
+     //   "@babel/preset-flow"
+     // ]
+    ]
+  }

@@ -1,0 +1,11 @@
+{
+  "name": "tsc",
+  "version": "1.0.0",
+  "description": "typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "tsc index.ts"
+  },
+  "author": "alexander",
+  "license": "ISC"
+}
